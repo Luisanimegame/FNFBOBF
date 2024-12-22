@@ -2345,7 +2345,7 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+			vocals = new FlxSound().loadEmbedded(Paths.voices + CoolUtil.difficultyString() + (PlayState.SONG.song));
 		else
 			vocals = new FlxSound();
 
