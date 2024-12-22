@@ -218,6 +218,39 @@ class Paths
 		return file;
 	}
 
+	inline static public function voiceseasy(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Easy.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Voices-Easy';
+		var voiceseasy = returnSound('songs', songKey);
+		return voiceseasy;
+		#end
+	}
+	
+	inline static public function voicesnormal(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Normal.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Voices-Normal';
+		var voicesnormal = returnSound('songs', songKey);
+		return voicesnormal;
+		#end
+	}
+	
+	inline static public function voiceshard(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Hard.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Voices-Hard';
+		var voiceshard = returnSound('songs', songKey);
+		return voiceshard;
+		#end
+	}
+	
 	inline static public function voices(song:String):Any
 	{
 		#if html5
