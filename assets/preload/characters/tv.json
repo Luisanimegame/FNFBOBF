@@ -1,0 +1,45 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "misses",
+			"fps": 24,
+			"name": "youmiss0",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/tv_assets",
+	"position": [
+		0,
+		190
+	],
+	"healthicon": "nothing",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		-20,
+		-20
+	],
+	"sing_duration": 4,
+	"scale": 1.3
+}
