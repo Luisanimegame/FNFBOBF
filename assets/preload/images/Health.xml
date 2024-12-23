@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="Health.png" width="370" height="279">
+  <SubTexture name="Health0004" x="0" y="0"  width="368" height="140" frameX="-0" frameY="-0" frameWidth="368" frameHeight="140"/>
+  <SubTexture name="Health0000" x="0" y="140"  width="370" height="139" frameX="-0" frameY="-0" frameWidth="370" frameHeight="139"/>
+  <SubTexture name="Health0001" x="0" y="140"  width="370" height="139" frameX="-0" frameY="-0" frameWidth="370" frameHeight="139"/>
+  <SubTexture name="Health0002" x="0" y="140"  width="370" height="139" frameX="-0" frameY="-0" frameWidth="370" frameHeight="139"/>
+  <SubTexture name="Health0003" x="0" y="140"  width="370" height="139" frameX="-0" frameY="-0" frameWidth="370" frameHeight="139"/>
+  <SubTexture name="Health0005" x="0" y="0"  width="368" height="140" frameX="-0" frameY="-0" frameWidth="368" frameHeight="140"/>
+  <SubTexture name="Health0006" x="0" y="0"  width="368" height="140" frameX="-0" frameY="-0" frameWidth="368" frameHeight="140"/>
+  <SubTexture name="Health0007" x="0" y="0"  width="368" height="140" frameX="-0" frameY="-0" frameWidth="368" frameHeight="140"/>
+</TextureAtlas>

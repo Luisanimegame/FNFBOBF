@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="conter_assets.png">
+  <SubTexture name="bad0000" x="0" y="0"  width="231" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="bad0002" x="0" y="325"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="bad0005" x="0" y="650"  width="245" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0000" x="231" y="0"  width="250" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0002" x="0" y="975"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0005" x="242" y="325"  width="239" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0000" x="481" y="0"  width="247" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0002" x="0" y="1300"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0005" x="242" y="975"  width="241" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0000" x="728" y="0"  width="246" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0002" x="0" y="1625"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0005" x="242" y="1300"  width="239" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="bad0001" x="0" y="0"  width="231" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="bad0003" x="0" y="325"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="bad0004" x="0" y="325"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0001" x="231" y="0"  width="250" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0003" x="0" y="975"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="good0004" x="0" y="975"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0001" x="481" y="0"  width="247" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0003" x="0" y="1300"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="shit0004" x="0" y="1300"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0001" x="728" y="0"  width="246" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0003" x="0" y="1625"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="sick0004" x="0" y="1625"  width="242" height="325" frameX="-107" frameY="-131" frameWidth="640" frameHeight="640"/>
+</TextureAtlas>
