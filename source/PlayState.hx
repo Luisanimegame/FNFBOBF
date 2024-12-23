@@ -2345,25 +2345,31 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			if (storyDifficulty == 3) {
+			if (storyDifficulty == 2) {
 				vocals = new FlxSound().loadEmbedded(Paths.voicesHard(PlayState.SONG.song));
 		} else
-			vocals = new FlxSound();
-			
-			if (storyDifficulty == 2) {
+			if (storyDifficulty == 1) {
 				vocals = new FlxSound().loadEmbedded(Paths.voicesNormal(PlayState.SONG.song));
 		} else
-			vocals = new FlxSound();
-
-			if (storyDifficulty == 1) {
+			if (storyDifficulty == 0) {
 				vocals = new FlxSound().loadEmbedded(Paths.voicesEasy(PlayState.SONG.song));
 		} else
 			vocals = new FlxSound();
-
+			
 		vocals.pitch = playbackRate;
+		if (storyDifficulty == 3) {
+				FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.instClassic(PlayState.SONG.song)));
+		} else
 		FlxG.sound.list.add(vocals);
-		FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.inst + CoolUtil.difficultyString() + (PlayState.SONG.song)));
-
+		if (storyDifficulty == 2) {
+				FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.instHard(PlayState.SONG.song)));
+		} else
+			if (storyDifficulty == 1) {
+				FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.instNormal(PlayState.SONG.song)));
+		} else
+			if (storyDifficulty == 0) {
+				FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.instEasy(PlayState.SONG.song)));
+		}
 		notes = new FlxTypedGroup<Note>();
 		add(notes);
 

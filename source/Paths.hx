@@ -224,8 +224,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Easy.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Voices-Easy';
-		var voiceseasy = returnSound('songs', songKey);
-		return voiceseasy;
+		var voicesEasy = returnSound('songs', songKey);
+		return voicesEasy;
 		#end
 	}
 	
@@ -235,8 +235,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Normal.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Voices-Normal';
-		var voicesnormal = returnSound('songs', songKey);
-		return voicesnormal;
+		var voicesNormal = returnSound('songs', songKey);
+		return voicesNormal;
 		#end
 	}
 	
@@ -246,8 +246,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Hard.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Voices-Hard';
-		var voiceshard = returnSound('songs', songKey);
-		return voiceshard;
+		var voicesHard = returnSound('songs', songKey);
+		return voicesHard;
 		#end
 	}
 	
@@ -279,8 +279,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Easy.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Inst-Easy';
-		var insteasy = returnSound('songs', songKey);
-		return insteasy;
+		var instEasy = returnSound('songs', songKey);
+		return instEasy;
 		#end
 	}
 	
@@ -290,8 +290,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Inst';
-		var instnormal = returnSound('songs', songKey);
-		return instnormal;
+		var instNormal = returnSound('songs', songKey);
+		return instNormal;
 		#end
 	}
 	
@@ -301,8 +301,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Inst';
-		var insthard = returnSound('songs', songKey);
-		return insthard;
+		var instHard = returnSound('songs', songKey);
+		return instHard;
 		#end
 	}
 	
@@ -312,8 +312,8 @@ class Paths
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Classic.$SOUND_EXT';
 		#else
 		var songKey:String = '${formatToSongPath(song)}/Inst-Classic';
-		var instclassic = returnSound('songs', songKey);
-		return instclassic;
+		var instClassic = returnSound('songs', songKey);
+		return instClassic;
 		#end
 	}
 

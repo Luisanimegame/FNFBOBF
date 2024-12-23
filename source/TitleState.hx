@@ -633,7 +633,7 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
 					#if PSYCH_WATERMARKS
-					createCoolText(['BBF Takeover Port'], 15);
+					createCoolText(['BBF Takeover Por'], 15);
 					#else
 					createCoolText(['GaboWuz', 'DGL']);
 					#end
@@ -654,9 +654,9 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Nao associado com', 'with'], -40);
+					createCoolText(['Nao associado', 'com'], -40);
 					#else
-					createCoolText(['Nao ASSOCIADO com', 'with'], -40);
+					createCoolText(['Nao ASSOCIADO', 'com'], -40);
 					#end
 				case 8:
 					addMoreText('newgrounds', -40);
