@@ -1,0 +1,26 @@
+{
+  "songs": [
+    [
+      "faker",
+      "bfsus",
+      [
+        0,
+        181,
+        255
+      ]
+    ]
+  ],
+  "weekCharacters": [
+    "",
+    "bf",
+    "gf"
+  ],
+  "weekBackground": "stage",
+  "difficulties": "easy, normal, hard, classic",
+  "storyName": "",
+  "weekBefore": "tutorial",
+  "weekName": "Tutorial",
+  "startUnlocked": true,
+  "hideStoryMode": false,
+  "hideFreeplay": false
+}
