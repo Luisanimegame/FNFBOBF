@@ -218,7 +218,7 @@ class Paths
 		return file;
 	}
 
-	inline static public function voiceseasy(song:String):Any
+	inline static public function voicesEasy(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Easy.$SOUND_EXT';
@@ -229,7 +229,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function voicesnormal(song:String):Any
+	inline static public function voicesNormal(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Normal.$SOUND_EXT';
@@ -240,7 +240,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function voiceshard(song:String):Any
+	inline static public function voicesHard(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Voices-Hard.$SOUND_EXT';
@@ -273,7 +273,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function insteasy(song:String):Any
+	inline static public function instEasy(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Easy.$SOUND_EXT';
@@ -284,7 +284,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function instnormal(song:String):Any
+	inline static public function instNormal(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
@@ -295,7 +295,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function insthard(song:String):Any
+	inline static public function instHard(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
@@ -306,7 +306,7 @@ class Paths
 		#end
 	}
 	
-	inline static public function instclassic(song:String):Any
+	inline static public function instClassic(song:String):Any
 	{
 		#if html5
 		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Classic.$SOUND_EXT';
