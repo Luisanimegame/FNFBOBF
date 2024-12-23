@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="Gabo.png" width="1286" height="1460">
+  <SubTexture name="idle0000" x="0" y="0"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0004" x="0" y="730"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0001" x="0" y="0"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0002" x="0" y="0"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0003" x="0" y="0"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0005" x="0" y="730"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0006" x="0" y="730"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="idle0007" x="0" y="730"  width="1286" height="730" frameX="-0" frameY="-0" frameWidth="1286" frameHeight="730"/>
+</TextureAtlas>
