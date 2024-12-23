@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="FakeBf.png" width="3850" height="670">
+  <SubTexture name="FakeBf_idle0004" x="0" y="0"  width="324" height="306" frameX="-466" frameY="-232" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0005" x="324" y="0"  width="325" height="310" frameX="-466" frameY="-228" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_left0003" x="649" y="0"  width="360" height="310" frameX="-381" frameY="-234" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_left0002" x="1009" y="0"  width="363" height="311" frameX="-378" frameY="-229" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0001" x="1372" y="0"  width="349" height="313" frameX="-458" frameY="-225" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0006" x="1721" y="0"  width="339" height="313" frameX="-459" frameY="-225" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_left0001" x="2060" y="0"  width="364" height="321" frameX="-384" frameY="-219" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_left0004" x="2424" y="0"  width="364" height="321" frameX="-384" frameY="-219" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_left0005" x="2788" y="0"  width="364" height="321" frameX="-384" frameY="-219" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_up0001" x="3152" y="0"  width="349" height="333" frameX="-416" frameY="-204" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_up0002" x="3501" y="0"  width="349" height="336" frameX="-416" frameY="-201" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_down0002" x="0" y="306"  width="315" height="338" frameX="-437" frameY="-202" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_right0001" x="315" y="310"  width="328" height="339" frameX="-418" frameY="-201" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_right0003" x="643" y="310"  width="334" height="340" frameX="-436" frameY="-208" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_right0002" x="977" y="311"  width="322" height="341" frameX="-430" frameY="-203" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_down0001" x="1299" y="313"  width="313" height="344" frameX="-438" frameY="-195" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_up0003" x="1612" y="313"  width="356" height="346" frameX="-409" frameY="-191" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_down0003" x="1968" y="321"  width="316" height="349" frameX="-441" frameY="-205" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_down0005" x="1299" y="313"  width="313" height="344" frameX="-438" frameY="-195" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_down0004" x="0" y="306"  width="315" height="338" frameX="-437" frameY="-202" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0002" x="1372" y="0"  width="349" height="313" frameX="-458" frameY="-225" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0003" x="1372" y="0"  width="349" height="313" frameX="-458" frameY="-225" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_idle0007" x="1372" y="0"  width="349" height="313" frameX="-458" frameY="-225" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_right0005" x="315" y="310"  width="328" height="339" frameX="-418" frameY="-201" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_right0004" x="977" y="311"  width="322" height="341" frameX="-430" frameY="-203" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_up0005" x="3152" y="0"  width="349" height="333" frameX="-416" frameY="-204" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="FakeBf_up0004" x="3501" y="0"  width="349" height="336" frameX="-416" frameY="-201" frameWidth="1280" frameHeight="720"/>
+</TextureAtlas>
