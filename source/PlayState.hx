@@ -2345,8 +2345,19 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices + CoolUtil.defaultDifficulties.copy() + (PlayState.SONG.song));
-		else
+			if (storyDifficulty == 3) {
+				vocals = new FlxSound().loadEmbedded(Paths.voicesHard(PlayState.SONG.song));
+		} else
+			vocals = new FlxSound();
+			
+			if (storyDifficulty == 2) {
+				vocals = new FlxSound().loadEmbedded(Paths.voicesNormal(PlayState.SONG.song));
+		} else
+			vocals = new FlxSound();
+
+			if (storyDifficulty == 1) {
+				vocals = new FlxSound().loadEmbedded(Paths.voicesEasy(PlayState.SONG.song));
+		} else
 			vocals = new FlxSound();
 
 		vocals.pitch = playbackRate;
