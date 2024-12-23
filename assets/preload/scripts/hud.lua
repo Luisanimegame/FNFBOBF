@@ -16,9 +16,7 @@ end
 mal = getProperty('iconP2.animation.name')
 bien = getProperty('iconP1.animation.name')
 
-addLuaScript('another_scripts/holdcover')
-
-makeAnimatedLuaSprite('scary', 'health', 365, 25)
+makeAnimatedLuaSprite('scary', 'Health', 365, 25)
 addAnimationByPrefix('scary', 'barra', 'Health', 12, true);
 setObjectCamera('scary', 'hud')
 scaleObject('scary', 1.55, 1.55);
