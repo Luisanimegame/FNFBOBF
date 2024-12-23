@@ -2351,7 +2351,7 @@ class PlayState extends MusicBeatState
 
 		vocals.pitch = playbackRate;
 		FlxG.sound.list.add(vocals);
-		FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.inst(PlayState.SONG.song)));
+		FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.inst + CoolUtil.difficultyString() + (PlayState.SONG.song)));
 
 		notes = new FlxTypedGroup<Note>();
 		add(notes);

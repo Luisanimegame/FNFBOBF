@@ -272,6 +272,50 @@ class Paths
 		return inst;
 		#end
 	}
+	
+	inline static public function insteasy(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Easy.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Inst-Easy';
+		var insteasy = returnSound('songs', songKey);
+		return insteasy;
+		#end
+	}
+	
+	inline static public function instnormal(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Inst';
+		var instnormal = returnSound('songs', songKey);
+		return instnormal;
+		#end
+	}
+	
+	inline static public function insthard(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Inst';
+		var insthard = returnSound('songs', songKey);
+		return insthard;
+		#end
+	}
+	
+	inline static public function instclassic(song:String):Any
+	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Inst-Classic.$SOUND_EXT';
+		#else
+		var songKey:String = '${formatToSongPath(song)}/Inst-Classic';
+		var instclassic = returnSound('songs', songKey);
+		return instclassic;
+		#end
+	}
 
 	inline static public function image(key:String, ?library:String):FlxGraphic
 	{
