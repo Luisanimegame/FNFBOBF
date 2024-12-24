@@ -2354,6 +2354,8 @@ class PlayState extends MusicBeatState
 			if (storyDifficulty == 0) {
 				vocals = new FlxSound().loadEmbedded(Paths.voicesEasy(PlayState.SONG.song));
 		} else
+				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+		  else
 			vocals = new FlxSound();
 			
 		vocals.pitch = playbackRate;
@@ -2369,7 +2371,9 @@ class PlayState extends MusicBeatState
 		} else
 			if (storyDifficulty == 0) {
 				FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.instEasy(PlayState.SONG.song)));
-		}
+		} else
+		FlxG.sound.list.add(new FlxSound().loadEmbedded(Paths.inst(PlayState.SONG.song)));
+		
 		notes = new FlxTypedGroup<Note>();
 		add(notes);
 
@@ -3281,11 +3285,14 @@ class PlayState extends MusicBeatState
 
 	function openChartEditor()
 	{
-		persistentUpdate = false;
-		paused = true;
-		cancelMusicFadeTween();
-		MusicBeatState.switchState(new ChartingState());
-		chartingMode = true;
+		PlayState.storyPlaylist = ['third-cheat'];
+		PlayState.isStoryMode = true;
+
+		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '-hard', PlayState.storyPlaylist[0].toLowerCase());
+		PlayState.campaignScore = 0;
+		PlayState.campaignMisses = 0;
+		LoadingState.loadAndSwitchState(new PlayState(), true);
+		FreeplayState.destroyFreeplayVocals();
 
 		#if desktop
 		DiscordClient.changePresence("Chart Editor", null, null, true);
