@@ -2282,8 +2282,31 @@ class PlayState extends MusicBeatState
 
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
-
+		
+		if (!paused)
+		{
+		if (storyDifficulty == 3)
+		FlxG.sound.playMusic(Paths.instClassic(PlayState.SONG.song), 1, false);
+		else
 		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		
+		if (storyDifficulty == 2)
+		FlxG.sound.playMusic(Paths.instHard(PlayState.SONG.song), 1, false);
+		else
+		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		
+		if (storyDifficulty == 1)
+		FlxG.sound.playMusic(Paths.instNormal(PlayState.SONG.song), 1, false);
+		else
+		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+
+		if (storyDifficulty == 0)
+		FlxG.sound.playMusic(Paths.instEasy(PlayState.SONG.song), 1, false);
+		else
+		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		}
+		
+		
 		FlxG.sound.music.pitch = playbackRate;
 		FlxG.sound.music.onComplete = finishSong.bind();
 		vocals.play();
