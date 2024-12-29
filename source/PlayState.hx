@@ -2285,11 +2285,6 @@ class PlayState extends MusicBeatState
 		
 		if (!paused)
 		{
-		if (storyDifficulty == 3)
-		FlxG.sound.playMusic(Paths.instClassic(PlayState.SONG.song), 1, false);
-		else
-		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
-		
 		if (storyDifficulty == 2)
 		FlxG.sound.playMusic(Paths.instHard(PlayState.SONG.song), 1, false);
 		else
