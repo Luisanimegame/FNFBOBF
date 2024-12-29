@@ -2405,9 +2405,6 @@ class PlayState extends MusicBeatState
 		var daBeats:Int = 0; // Not exactly representative of 'daBeats' lol, just how much it has looped
 
 		var songName:String = Paths.formatToSongPath(SONG.song);
-		if (storyDifficulty == 0)
-		var file:String = Paths.json(songName + '/events-easy');
-		else
 		var file:String = Paths.json(songName + '/events');
 		#if desktop
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
