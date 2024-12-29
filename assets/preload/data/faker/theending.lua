@@ -1,6 +1,6 @@
 TheEnding = false
 therealend = false
-zoom = false
+skipend = false
 
 function onCreatePost()
 makeAnimatedLuaSprite('fab', 'cred/Fab')
@@ -32,18 +32,28 @@ makeLuaSprite('preto', 'black') -- ele fez tudo, confia
 setObjectCamera('preto', 'hud')
 addLuaSprite('preto', true)
 
+makeLuaText('mensagem', 'Press Space or click on this message.', 2900, -340, 700);  
+setObjectCamera('mensagem', 'other');
+setTextBorder('mensagem', 2, '0000FF') 
+setTextSize('mensagem', 15);
+setTextFont('mensagem', 'vcr.ttf')
+addLuaText('mensagem');
+
 setProperty('fab.alpha', 0);
 setProperty('bob.alpha', 0);
 setProperty('dgl.alpha', 0);
 setProperty('vsilvando.alpha', 0);
 setProperty('gaby.alpha', 0);
 setProperty('preto.alpha', 0);
+setProperty('mensagem.alpha', 0);
 end
 
 function onEndSong()
 if not TheEnding then
 playMusic('final_song', 1, false)
 runTimer('fab', 6.90)
+doTweenAlpha('14', 'mensagem', 1, 2.5, 'linear')
+skipend = true
 
 return Function_Stop;
 end
@@ -54,6 +64,7 @@ function onTimerCompleted(tag, loops, loopsLeft)
 if tag == 'fab' then
 doTweenAlpha('1', 'fab', 1, 1.25, 'linear');
 runTimer('bob', 3.40)
+skipend = true
 end
 if tag == 'bob' then
 setProperty('fab.alpha', 0);
@@ -84,7 +95,6 @@ if tag == 'bobagain' then
 setProperty('preto.alpha', 0);
 triggerEvent("Play Animation", "cut", "DAD")
 runTimer('pretoagain', 1.70)
-zoom = true
 end
 if tag == 'pretoagain' then
 setProperty('preto.alpha', 1);
@@ -95,13 +105,14 @@ therealend = true
 end
 end
 
-function onStepHit()
-if zoom == true then
-setProperty('defaultCamZoom', 1.15)
-end
-end
-
 function onUpdate(elapsed)
+if skipend == true then
+if (getMouseX('camHUD') > 1150 and getMouseX('camHUD') < 1280) and (getMouseY('camHUD') > 582.5 and getMouseY('camHUD') < 720 and mousePressed('left')) or keyPressed('enter') or keyPressed('space') then 
+endSong() 
+therealend = true
+skipend = false
+end
+end
 if therealend == true then
 endSong() 
 TheEnding = true
