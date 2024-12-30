@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+-->
+<TextureAtlas imagePath="boyfriedo-dead_assets.png" width="1083" height="1334">
+  <SubTexture name="dead0000" x="0" y="0"  width="285" height="456" frameX="-181" frameY="-113" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0000" x="285" y="0"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="dead0005" x="285" y="453"  width="281" height="451" frameX="-172" frameY="-118" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0002" x="0" y="456"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="dead0002" x="535" y="0"  width="280" height="452" frameX="-175" frameY="-117" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0000" x="566" y="452"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0002" x="815" y="0"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0004" x="833" y="429"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0006" x="566" y="881"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0001" x="285" y="0"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0003" x="0" y="456"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0005" x="833" y="429"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="confirm0007" x="566" y="881"  width="250" height="453" frameX="-182" frameY="-116" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="dead0001" x="0" y="0"  width="285" height="456" frameX="-181" frameY="-113" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="dead0003" x="535" y="0"  width="280" height="452" frameX="-175" frameY="-117" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="dead0004" x="535" y="0"  width="280" height="452" frameX="-175" frameY="-117" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0001" x="566" y="452"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0004" x="566" y="452"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0005" x="566" y="452"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0003" x="815" y="0"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0006" x="815" y="0"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+  <SubTexture name="loop0007" x="815" y="0"  width="267" height="429" frameX="-195" frameY="-139" frameWidth="640" frameHeight="640"/>
+</TextureAtlas>
