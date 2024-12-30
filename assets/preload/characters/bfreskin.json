@@ -46,58 +46,47 @@
 		},
 		{
 			"offsets": [
-				7,
-				19
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singLEFTmiss",
 			"indices": [],
-			"name": "BF NOTE LEFT MISS"
+			"name": "MLeft0"
 		},
 		{
 			"offsets": [
-				-15,
-				-19
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWNmiss",
 			"indices": [],
-			"name": "BF NOTE DOWN MISS"
+			"name": "MDown0"
 		},
 		{
 			"offsets": [
-				-46,
-				27
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singUPmiss",
 			"indices": [],
-			"name": "BF NOTE UP MISS"
+			"name": "MUp0"
 		},
 		{
 			"offsets": [
-				-44,
-				22
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHTmiss",
 			"indices": [],
-			"name": "BF NOTE RIGHT MISS"
-		},
-		{
-			"offsets": [
-				-3,
-				5
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "hey",
-			"indices": [],
-			"name": "BF HEY"
+			"name": "MRight0"
 		},
 		{
 			"loop": false,
