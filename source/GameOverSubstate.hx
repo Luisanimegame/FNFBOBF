@@ -14,8 +14,6 @@ import flixel.tweens.FlxTween;
 class GameOverSubstate extends MusicBeatSubstate
 {
 	public var boyfriend:Boyfriend;
-	public var daddy:Character;
-	public var garota:Character;
 	var camFollow:FlxPoint;
 	var camFollowPos:FlxObject;
 	var updateCamera:Bool = false;
@@ -24,8 +22,6 @@ class GameOverSubstate extends MusicBeatSubstate
 	var stageSuffix:String = "";
 
 	public static var characterName:String = 'bfreskin-dead';
-	public static var characterdadName:String = 'bbfsuspect';
-	public static var charactergfName:String = 'tv';
 	public static var deathSoundName:String = 'fnf_loss_sfx';
 	public static var loopSoundName:String = 'gameOver';
 	public static var endSoundName:String = 'gameOverEnd';
@@ -34,8 +30,6 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	public static function resetVariables() {
 		characterName = 'bfreskin-dead';
-		characterdadName = 'bbfsuspect';
-		charactergfName = 'tv';
 		deathSoundName = 'fnf_loss_sfx';
 		loopSoundName = 'gameOver';
 		endSoundName = 'gameOverEnd';
@@ -58,7 +52,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		//zoom
 
-		FlxTween.tween(FlxG.camera, {zoom: 0.50}, 0.6, {ease: FlxEase.expoOut});
+		FlxTween.tween(FlxG.camera, {zoom: 0.65}, 0.6, {ease: FlxEase.expoOut});
 
 		FlxG.camera.flash(FlxColor.WHITE, 0.6);
 	
