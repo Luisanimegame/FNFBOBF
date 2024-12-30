@@ -13,6 +13,8 @@ import flixel.tweens.FlxTween;
 class GameOverSubstate extends MusicBeatSubstate
 {
 	public var boyfriend:Boyfriend;
+	public var daddy:Character;
+	public var garota:Character;
 	var camFollow:FlxPoint;
 	var camFollowPos:FlxObject;
 	var updateCamera:Bool = false;
@@ -21,6 +23,8 @@ class GameOverSubstate extends MusicBeatSubstate
 	var stageSuffix:String = "";
 
 	public static var characterName:String = 'bfreskin-dead';
+	public static var characterdadName:String = 'bbfsuspect';
+	public static var charactergfName:String = 'tv';
 	public static var deathSoundName:String = 'fnf_loss_sfx';
 	public static var loopSoundName:String = 'gameOver';
 	public static var endSoundName:String = 'gameOverEnd';
@@ -28,7 +32,9 @@ class GameOverSubstate extends MusicBeatSubstate
 	public static var instance:GameOverSubstate;
 
 	public static function resetVariables() {
-		characterName = 'bf-dead';
+		characterName = 'bfreskin-dead';
+		characterdadName = 'bbfsuspect';
+		charactergfName = 'tv';
 		deathSoundName = 'fnf_loss_sfx';
 		loopSoundName = 'gameOver';
 		endSoundName = 'gameOverEnd';
@@ -42,18 +48,51 @@ class GameOverSubstate extends MusicBeatSubstate
 		super.create();
 	}
 
-	public function new(x:Float, y:Float, camX:Float, camY:Float)
+	public function new(x:Float, y:Float, camX:Float, camY:Float) // obrigado Arrow Funk v1
 	{
+		FlxG.camera.zoom = 1;
+		
+		//shak
+		FlxG.camera.shake(0.02, 0.18);
+
+		//zoom
+
+		FlxTween.tween(FlxG.camera, {zoom: 0.50}, 0.6, {ease: FlxEase.expoOut});
+
+		FlxG.camera.flash(FlxColor.WHITE, 0.6);
+	
 		super();
 
 		PlayState.instance.setOnLuas('inGameOver', true);
 
 		Conductor.songPosition = 0;
+		
+		var bg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
+		bg.antialiasing = true;
+		add(bg);
+		
+		var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
+		front.antialiasing = true;
+		add(front);
+		
+		var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
+		curty.antialiasing = true;
+		add(curty);
 
 		boyfriend = new Boyfriend(x, y, characterName);
 		boyfriend.x += boyfriend.positionArray[0];
 		boyfriend.y += boyfriend.positionArray[1];
 		add(boyfriend);
+		
+		daddy = new Character(x, y, characterdadName);
+		daddy.x += dad.positionArray[0];
+		daddy.y += dad.positionArray[1];
+		add(daddy);
+		
+		garota = new Character(x, y, charactergfName);
+		garota.x += gf.positionArray[0];
+		garota.y += gf.positionArray[1];
+		add(garota);
 
 		camFollow = new FlxPoint(boyfriend.getGraphicMidpoint().x, boyfriend.getGraphicMidpoint().y);
 
@@ -101,7 +140,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 			WeekData.loadTheFirstEnabledMod();
 			if (PlayState.isStoryMode)
-				MusicBeatState.switchState(new StoryMenuState());
+				MusicBeatState.switchState(new FreeplayState());
 			else
 				MusicBeatState.switchState(new FreeplayState());
 
@@ -170,6 +209,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		{
 			isEnding = true;
 			boyfriend.playAnim('deathConfirm', true);
+			FlxTween.tween(FlxG.camera, {zoom: 2.5}, 4, {ease: FlxEase.expoIn});
 			FlxG.sound.music.stop();
 			FlxG.sound.play(Paths.music(endSoundName));
 			new FlxTimer().start(0.7, function(tmr:FlxTimer)
