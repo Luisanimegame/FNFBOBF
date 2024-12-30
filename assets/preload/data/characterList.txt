@@ -1,4 +1,6 @@
 bf
+bfreskin
+bfreskin-dead
 gf
 bbfsuspect
 bbfsuspectpiracy
