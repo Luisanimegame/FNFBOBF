@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
@@ -85,13 +86,13 @@ class GameOverSubstate extends MusicBeatSubstate
 		add(boyfriend);
 		
 		daddy = new Character(x, y, characterdadName);
-		daddy.x += dad.positionArray[0];
-		daddy.y += dad.positionArray[1];
+		daddy.x += daddy.positionArray[0];
+		daddy.y += daddy.positionArray[1];
 		add(daddy);
 		
 		garota = new Character(x, y, charactergfName);
-		garota.x += gf.positionArray[0];
-		garota.y += gf.positionArray[1];
+		garota.x += garota.positionArray[0];
+		garota.y += garota.positionArray[1];
 		add(garota);
 
 		camFollow = new FlxPoint(boyfriend.getGraphicMidpoint().x, boyfriend.getGraphicMidpoint().y);
