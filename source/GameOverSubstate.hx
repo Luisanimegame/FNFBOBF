@@ -64,14 +64,17 @@ class GameOverSubstate extends MusicBeatSubstate
 		
 		var bg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
 		bg.antialiasing = true;
+		bg.scrollFactor.set(0.9, 0.9);
 		add(bg);
 		
 		var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
 		front.antialiasing = true;
+		front.scrollFactor.set(0.9, 0.9);
 		add(front);
 		
 		var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
 		curty.antialiasing = true;
+		curty.scrollFactor.set(1, 1);
 		add(curty);
 
 		boyfriend = new Boyfriend(x, y, characterName);
