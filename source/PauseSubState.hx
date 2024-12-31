@@ -19,6 +19,8 @@ import flixel.addons.display.FlxTiledSprite;
 class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
+	
+	var checkerboard:FlxTiledSprite;
 
 	var menuItems:Array<String> = [];
 	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', #if mobile 'Chart Editor', #end 'Change Difficulty', 'Exit to menu'];

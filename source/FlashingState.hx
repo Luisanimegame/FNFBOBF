@@ -10,18 +10,31 @@ import lime.app.Application;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
+import flixel.addons.display.FlxTiledSprite;
 
 class FlashingState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
+	
+	var checkerboard:FlxTiledSprite;
 
 	var warnText:FlxText;
 	override function create()
 	{
 		super.create();
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var bg:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('menubobf/menuBGs'));
+		bg.scrollFactor.set(0, 0);
+		bg.updateHitbox();
+		bg.screenCenter();
 		add(bg);
+		
+		checkerboard = new FlxTiledSprite(Paths.image('checkerboard'), FlxG.width * 3, FlxG.width * 3, true, true);
+		checkerboard.scrollFactor.set(0, 0);
+		checkerboard.x = -100;
+		checkerboard.y = -100;
+		checkerboard.antialiasing = false;
+		add(checkerboard);
 
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Tome cuidado amigo!\n
@@ -41,6 +54,9 @@ class FlashingState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		checkerboard.scrollX -= 1 * 15 * elapsed;
+		checkerboard.scrollY += 1 * 15 * elapsed;
+	
 		if(!leftState) {
 			var back:Bool = controls.BACK;
 			if (controls.ACCEPT || back) {
