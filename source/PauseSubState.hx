@@ -24,7 +24,7 @@ class PauseSubState extends MusicBeatSubstate
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
-	var pauseMusic:FlxSound;
+	var pauseSong:FlxSound;
 	var practiceText:FlxText;
 	var skipTimeText:FlxText;
 	var skipTimeTracker:Alphabet;
@@ -60,17 +60,18 @@ class PauseSubState extends MusicBeatSubstate
 		}
 		difficultyChoices.push('BACK');
 
-
-		pauseMusic = new FlxSound();
-		if(songName != null) {
-			pauseMusic.loadEmbedded(Paths.music(songName), true, true);
-		} else if (songName != 'None') {
-			pauseMusic.loadEmbedded(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic)), true, true);
+		pauseSong = new FlxSound();
+		if(Conductor.songPos > 0)
+		{
+			@:privateAccess
+			pauseSong.loadEmbedded(PlayState.instance.inst._sound, true, false);
+			
+			pauseSong.play(Conductor.songPos);
+			pauseSong.pitch = 0.9;
+			pauseSong.volume = 0;
+			FlxTween.tween(pauseSong, {volume: 0.6}, 3, {startDelay: 1});
 		}
-		pauseMusic.volume = 0;
-		pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
-
-		FlxG.sound.list.add(pauseMusic);
+		FlxG.sound.list.add(pauseSong);
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		bg.alpha = 0;
