@@ -9,6 +9,7 @@ import flixel.effects.FlxFlicker;
 import lime.app.Application;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.addons.display.FlxTiledSprite;
 
@@ -21,6 +22,8 @@ class FlashingState extends MusicBeatState
 	var warnText:FlxText;
 	override function create()
 	{
+		FlxG.camera.zoom = 1;
+	
 		super.create();
 
 		var bg:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('menubobf/menuBGs'));
@@ -66,6 +69,8 @@ class FlashingState extends MusicBeatState
 				if(!back) {
 					ClientPrefs.flashing = false;
 					ClientPrefs.saveSettings();
+					FlxG.camera.flash(FlxColor.WHITE, 0.6);
+					FlxTween.tween(FlxG.camera, {zoom: 2.5}, 4, {ease: FlxEase.expoIn});
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 					FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker) {
 						new FlxTimer().start(0.5, function (tmr:FlxTimer) {
