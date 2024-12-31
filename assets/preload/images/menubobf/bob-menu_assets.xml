@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="bob-menu_assets" width="1403" height="1251">
+  <SubTexture name="bob0004" x="0" y="0"  width="469" height="619" frameX="-76" frameY="-105" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0002" x="469" y="0"  width="469" height="616" frameX="-80" frameY="-108" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0006" x="938" y="0"  width="465" height="633" frameX="-54" frameY="-90" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0000" x="469" y="616"  width="463" height="635" frameX="-51" frameY="-88" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0001" x="469" y="616"  width="463" height="635" frameX="-51" frameY="-88" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0008" x="469" y="616"  width="463" height="635" frameX="-51" frameY="-88" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0009" x="469" y="616"  width="463" height="635" frameX="-51" frameY="-88" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0010" x="469" y="616"  width="463" height="635" frameX="-51" frameY="-88" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0003" x="469" y="0"  width="469" height="616" frameX="-80" frameY="-108" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0005" x="0" y="0"  width="469" height="619" frameX="-76" frameY="-105" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="bob0007" x="938" y="0"  width="465" height="633" frameX="-54" frameY="-90" frameWidth="1286" frameHeight="730"/>
+</TextureAtlas>

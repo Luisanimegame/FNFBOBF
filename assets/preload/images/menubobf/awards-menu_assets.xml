@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="awards-menu_assets">
+  <SubTexture name="legalman0000" x="0" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0004" x="243" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0000" x="486" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0004" x="719" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0001" x="486" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0002" x="486" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0003" x="486" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0005" x="719" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0006" x="719" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0007" x="719" y="0"  width="233" height="162" frameX="-892" frameY="-459" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0001" x="0" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0002" x="0" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0003" x="0" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0005" x="243" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0006" x="243" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0007" x="243" y="0"  width="243" height="172" frameX="-887" frameY="-454" frameWidth="1286" frameHeight="730"/>
+</TextureAtlas>

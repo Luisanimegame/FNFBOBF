@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="op-menu_assets">
+  <SubTexture name="legalman0000" x="0" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0004" x="146" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0000" x="292" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0002" x="428" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0004" x="564" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0001" x="0" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0002" x="0" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0003" x="0" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0005" x="146" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0006" x="146" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="legalman0007" x="146" y="0"  width="146" height="335" frameX="-736" frameY="-291" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0001" x="292" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0003" x="428" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0005" x="564" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0006" x="564" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+  <SubTexture name="sim0007" x="564" y="0"  width="136" height="325" frameX="-741" frameY="-296" frameWidth="1286" frameHeight="730"/>
+</TextureAtlas>
