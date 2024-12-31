@@ -24,7 +24,7 @@ class PauseSubState extends MusicBeatSubstate
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
-	var pauseSong:FlxSound;
+	var pauseMusic:FlxSound;
 	var practiceText:FlxText;
 	var skipTimeText:FlxText;
 	var skipTimeTracker:Alphabet;
@@ -60,18 +60,17 @@ class PauseSubState extends MusicBeatSubstate
 		}
 		difficultyChoices.push('BACK');
 
-		pauseSong = new FlxSound();
-		if(Conductor.songPos > 0)
-		{
-			@:privateAccess
-			pauseSong.loadEmbedded(PlayState.instance.inst._sound, true, false);
-			
-			pauseSong.play(Conductor.songPos);
-			pauseSong.pitch = 0.9;
-			pauseSong.volume = 0;
-			FlxTween.tween(pauseSong, {volume: 0.6}, 3, {startDelay: 1});
+
+		pauseMusic = new FlxSound();
+		if(songName != null) {
+			pauseMusic.loadEmbedded(Paths.music(songName), true, true);
+		} else if (songName != 'None') {
+			pauseMusic.loadEmbedded(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic)), true, true);
 		}
-		FlxG.sound.list.add(pauseSong);
+		pauseMusic.volume = 0;
+		pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
+
+		FlxG.sound.list.add(pauseMusic);
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		bg.alpha = 0;
@@ -146,8 +145,8 @@ class PauseSubState extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		cantUnpause -= elapsed;
-		if (pauseSong.volume < 0.5)
-			pauseSong.volume += 0.01 * elapsed;
+		if (pauseMusic.volume < 0.5)
+			pauseMusic.volume += 0.01 * elapsed;
 
 		super.update(elapsed);
 		updateSkipTextStuff();
@@ -321,7 +320,7 @@ class PauseSubState extends MusicBeatSubstate
 
 	override function destroy()
 	{
-		pauseSong.destroy();
+		pauseMusic.destroy();
 
 		super.destroy();
 	}
