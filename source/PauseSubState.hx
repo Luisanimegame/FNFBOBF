@@ -14,6 +14,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
 import flixel.util.FlxStringUtil;
+import flixel.addons.display.FlxTiledSprite;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -76,6 +77,13 @@ class PauseSubState extends MusicBeatSubstate
 		bg.alpha = 0;
 		bg.scrollFactor.set();
 		add(bg);
+		
+		checkerboard = new FlxTiledSprite(Paths.image('brink'), FlxG.width * 3, FlxG.width * 3, true, true);
+		checkerboard.scrollFactor.set(0, 0);
+		checkerboard.x = -100;
+		checkerboard.y = -100;
+		checkerboard.antialiasing = false;
+		add(checkerboard);
 
 		var levelInfo:FlxText = new FlxText(20, 15, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
@@ -147,6 +155,9 @@ class PauseSubState extends MusicBeatSubstate
 		cantUnpause -= elapsed;
 		if (pauseMusic.volume < 0.5)
 			pauseMusic.volume += 0.01 * elapsed;
+			
+		checkerboard.scrollX -= 1 * 15 * elapsed;
+		checkerboard.scrollY += 1 * 15 * elapsed;
 
 		super.update(elapsed);
 		updateSkipTextStuff();
