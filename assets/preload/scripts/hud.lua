@@ -16,19 +16,25 @@ end
 mal = getProperty('iconP2.animation.name')
 bien = getProperty('iconP1.animation.name')
 
-makeAnimatedLuaSprite('scary', 'Health', 365, 25)
+makeAnimatedLuaSprite('scary', 'Health', 365 -10, 25)
 addAnimationByPrefix('scary', 'barra', 'Health', 12, true);
 setObjectCamera('scary', 'hud')
 scaleObject('scary', 1.55, 1.55);
 addLuaSprite('scary', true)
 
-makeAnimatedLuaSprite('oponenteIcon',nil, 350, 85)
+makeAnimatedLuaSprite('upscril', 'support', 365 -10, 25)
+addAnimationByPrefix('upscril', 'barra', 'Health', 12, true);
+setObjectCamera('upscril', 'hud')
+scaleObject('upscril', 1.55, 1.55);
+addLuaSprite('upscril', true)
+
+makeAnimatedLuaSprite('oponenteIcon',nil, 350 -10, 85)
 loadGraphic('oponenteIcon','icons/icon-'..mal, frame)
 addAnimation('oponenteIcon','icons/icon-'..mal, {0, 1}, 0, true)
 setObjectCamera('oponenteIcon', 'hud')
 addLuaSprite('oponenteIcon', true)
 
-makeAnimatedLuaSprite('playericon',nil, 800, 115)
+makeAnimatedLuaSprite('playericon',nil, 800 -10, 115)
 loadGraphic('playericon','icons/icon-'..bien, frame)
 addAnimation('playericon','icons/icon-'..bien, {0, 1}, 0, true)
 setObjectCamera('playericon', 'hud')
@@ -48,7 +54,7 @@ addLuaSprite('rating', false);
 
 setProperty('healthBar.scale.x', 0.30)
 setProperty('healthBar.scale.y', 9.45)
-setProperty('healthBar.x', 355)
+setProperty('healthBar.x', 355 -10)
 setProperty('healthBar.y', 97)
 
 setProperty('iconP2.visible', false);
@@ -63,8 +69,9 @@ setProperty('showRating', false)
 setObjectOrder('blackOut', 1)
 setObjectOrder('healthBar', 3)
 setObjectOrder('scary', 4)
-setObjectOrder('oponenteIcon', 5)
-setObjectOrder('playericon', 6)
+setObjectOrder('upscril', 5)
+setObjectOrder('oponenteIcon', 6)
+setObjectOrder('playericon', 7)
 setObjectOrder('rating', 35)
 end
 
@@ -115,10 +122,12 @@ end
 
 function onUpdate()
 if not downscroll then
-setProperty('scary.y', 465)
-setProperty('healthBar.y', 537)
-setProperty('oponenteIcon.y', 525)
-setProperty('playericon.y', 555)
+setProperty('scary.y', 575)
+setProperty('upscril.y', 485)
+setProperty('healthBar.y', 647)
+setProperty('oponenteIcon.y', 545)
+setProperty('playericon.y', 575)
+setProperty('rating.y', 70)
 end
 
 setProperty('rating.angle',  40)
