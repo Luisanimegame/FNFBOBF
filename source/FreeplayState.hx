@@ -18,6 +18,7 @@ import lime.utils.Assets;
 import flixel.system.FlxSound;
 import openfl.utils.Assets as OpenFlAssets;
 import WeekData;
+import flixel.addons.display.FlxTiledSprite;
 #if MODS_ALLOWED
 import sys.FileSystem;
 #end
