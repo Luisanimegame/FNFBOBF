@@ -24,11 +24,11 @@ class FlashingState extends MusicBeatState
 		add(bg);
 
 		warnText = new FlxText(0, 0, FlxG.width,
-			"Hey, watch out!\n
-			This Mod contains some flashing lights!\n
-			Press ENTER to disable them now or go to Options Menu.\n
-			Press ESCAPE to ignore this message.\n
-			You've been warned!",
+			"Tome cuidado amigo!\n
+			Esse Jogo Original, feito por um cara completamente do bem\n
+			Tem Luzes Piscantes, wow! tu foi avisado (nao tem como desativar, eu acho)\n
+			aperte ESCAPE ou ENTER para ignorar a mensagem.\n
+			Tu foi bobsado!", //Xokito reference
 			32);
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
@@ -57,10 +57,14 @@ class FlashingState extends MusicBeatState
 						});
 					});
 				} else {
-					FlxG.sound.play(Paths.sound('cancelMenu'));
-					FlxTween.tween(warnText, {alpha: 0}, 1, {
-						onComplete: function (twn:FlxTween) {
+					ClientPrefs.flashing = false;
+					ClientPrefs.saveSettings();
+					FlxG.sound.play(Paths.sound('confirmMenu'));
+					FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker) {
+						new FlxTimer().start(0.5, function (tmr:FlxTimer) {
 							MusicBeatState.switchState(new TitleState());
+								});
+							});
 						}
 					});
 				}

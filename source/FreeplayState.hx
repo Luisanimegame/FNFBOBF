@@ -32,6 +32,8 @@ class FreeplayState extends MusicBeatState
 	private static var curSelected:Int = 0;
 	var curDifficulty:Int = -1;
 	private static var lastDifficultyName:String = '';
+	
+	var checkerboard:FlxTiledSprite;
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
@@ -47,6 +49,7 @@ class FreeplayState extends MusicBeatState
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite;
+	var pedropedropedro:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
@@ -101,17 +104,24 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menubobf/menuBGs'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.screenCenter();
+		
+		checkerboard = new FlxTiledSprite(Paths.image('brink'), FlxG.width * 3, FlxG.width * 3, true, true);
+		checkerboard.scrollFactor.set(0, 0);
+		checkerboard.x = -100;
+		checkerboard.y = -100;
+		checkerboard.antialiasing = false;
+		add(checkerboard);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(90, 320, songs[i].songName, true);
+			var songText:Alphabet = new Alphabet(425, 320, songs[i].songName, true);
 			songText.isMenuItem = true;
 			songText.targetY = i - curSelected;
 			grpSongs.add(songText);
@@ -136,6 +146,13 @@ class FreeplayState extends MusicBeatState
 			// songText.screenCenter(X);
 		}
 		WeekData.setDirectoryFromWeek();
+		
+		var pedropedropedro:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('menubobf/black'));
+		pedropedropedro.scrollFactor.set(0, 0);
+		pedropedropedro.updateHitbox();
+		pedropedropedro.screenCenter();
+		pedropedropedro.antialiasing = ClientPrefs.globalAntialiasing;
+		add(pedropedropedro);
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
@@ -481,10 +498,12 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...iconArray.length)
 		{
-			iconArray[i].alpha = 0.6;
+			iconArray[i].alpha = 0.45;
+			iconArray[curSelected].scale.set(0.8, 0.8);
 		}
 
 		iconArray[curSelected].alpha = 1;
+		iconArray[curSelected].scale.set(1, 1);
 
 		for (item in grpSongs.members)
 		{
