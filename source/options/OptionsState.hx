@@ -34,6 +34,7 @@ class OptionsState extends MusicBeatState
 	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
+	private var camAchievement:FlxCamera;
 	public static var menuBG:FlxSprite;
 
 	function openSelectedSubstate(label:String) {
@@ -140,6 +141,9 @@ class OptionsState extends MusicBeatState
 
 		changeSelection();
 		ClientPrefs.saveSettings();
+		
+		camAchievement = new FlxCamera();
+		FlxG.cameras.add(camAchievement, false);
 		
 		#if mobile
 		addVirtualPad(UP_DOWN, A_B_C);
