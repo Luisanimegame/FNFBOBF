@@ -141,8 +141,8 @@ class MainMenuState extends MusicBeatState
 			var offset:Float = 0 - (Math.max(optionShit.length, 0) - 0) * 0;
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 0)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('menubobf/' + optionShit[i] + '-menu_assets');
-			menuItem.animation.addByPrefix('idle', "sim", 24);
-			menuItem.animation.addByPrefix('selected', "legalman", 24);
+			menuItem.animation.addByPrefix('idle', "sim", 12);
+			menuItem.animation.addByPrefix('selected', "legalman", 12);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
