@@ -1,92 +1,114 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "danceLeft",
-			"indices": [],
-			"name": "DanceLeft0"
+			"fps": 24,
+			"name": "DanceLeft0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "danceRight",
-			"indices": [],
-			"name": "DanceRight0"
+			"fps": 24,
+			"name": "DanceRight0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Left0"
+			"fps": 24,
+			"name": "Left0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down0"
+			"fps": 24,
+			"name": "Down0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Up0"
+			"fps": 24,
+			"name": "Up0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Right0"
+			"fps": 24,
+			"name": "Right0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "PLAYERMISS",
-			"indices": [],
-			"name": "babado0"
+			"fps": 24,
+			"name": "babado0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "cut",
-			"indices": [],
-			"name": "ohmy0"
+			"fps": 24,
+			"name": "ohmy0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				385,
+				48
+			],
+			"anim": "anothercuteasy",
+			"fps": 12,
+			"name": "cutscine0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				385,
+				48
+			],
+			"anim": "yeah",
+			"fps": 24,
+			"name": "huh0",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -103,8 +125,8 @@
 		255
 	],
 	"camera_position": [
-		-50,
-		-20
+		-450,
+		-40
 	],
 	"sing_duration": 4,
 	"scale": 1.2
