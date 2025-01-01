@@ -23,6 +23,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
+import Achievements;
 import Controls;
 
 using StringTools;
@@ -42,6 +43,15 @@ class OptionsState extends MusicBeatState
 				#end
 				openSubState(new options.NotesSubState());
 			case 'isso nao e uma musica secreta':
+				#if ACHIEVEMENTS_ALLOWED
+				Achievements.loadAchievements();
+				var achieveID:Int = Achievements.getAchievementIndex('wekscrety');
+				if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //gaysex
+				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
+				giveAchievement();
+				ClientPrefs.saveSettings();
+				}
+				#end
 				PlayState.storyPlaylist = ['dropped'];
 				PlayState.isStoryMode = true;
 
