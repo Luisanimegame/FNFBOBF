@@ -29,7 +29,7 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'Claramente nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
+	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -41,7 +41,7 @@ class OptionsState extends MusicBeatState
 				removeVirtualPad();
 				#end
 				openSubState(new options.NotesSubState());
-			case 'Claramente nao e uma musica secreta':
+			case 'isso nao e uma musica secreta':
 				PlayState.storyPlaylist = ['dropped'];
 				PlayState.isStoryMode = true;
 
