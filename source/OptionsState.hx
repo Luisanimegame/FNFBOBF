@@ -15,6 +15,7 @@ import lime.utils.Assets;
 import flixel.FlxSubState;
 import flash.text.TextField;
 import flixel.FlxG;
+import flixel.FlxCamera;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
 import haxe.Json;
@@ -23,15 +24,17 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
+import Achievements;
 import Controls;
 
 using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Claramente nao e uma musica secreta', 'Graphics', 'Visuals and UI', 'Gameplay'];
+	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
+	private var camAchievement:FlxCamera;
 	public static var menuBG:FlxSprite;
 
 	function openSelectedSubstate(label:String) {
@@ -41,7 +44,16 @@ class OptionsState extends MusicBeatState
 				removeVirtualPad();
 				#end
 				openSubState(new options.NotesSubState());
-			case 'Claramente nao e uma musica secreta':
+			case 'isso nao e uma musica secreta':
+				#if ACHIEVEMENTS_ALLOWED
+				Achievements.loadAchievements();
+				var achieveID:Int = Achievements.getAchievementIndex('wekscrety');
+				if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //gaysex
+				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
+				giveAchievement();
+				ClientPrefs.saveSettings();
+				}
+				#end
 				PlayState.storyPlaylist = ['dropped'];
 				PlayState.isStoryMode = true;
 
@@ -77,6 +89,15 @@ class OptionsState extends MusicBeatState
 
 	var selectorLeft:Alphabet;
 	var selectorRight:Alphabet;
+	
+	#if ACHIEVEMENTS_ALLOWED
+	// Unlocks "Freaky on a Friday Night" achievement
+	function giveAchievement() {
+		add(new AchievementObject('wekscrety', camAchievement));
+		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+		trace('Giving achievement "wekscrety"');
+	}
+	#end
 
 	override function create() {
 		Paths.clearStoredMemory();
@@ -120,6 +141,9 @@ class OptionsState extends MusicBeatState
 
 		changeSelection();
 		ClientPrefs.saveSettings();
+		
+		camAchievement = new FlxCamera();
+		FlxG.cameras.add(camAchievement, false);
 		
 		#if mobile
 		addVirtualPad(UP_DOWN, A_B_C);
