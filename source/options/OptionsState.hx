@@ -143,6 +143,7 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 		
 		camAchievement = new FlxCamera();
+		camAchievement.bgColor.alpha = 0;
 		FlxG.cameras.add(camAchievement, false);
 		
 		#if mobile
