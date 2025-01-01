@@ -13,6 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+import flixel.addons.display.FlxTiledSprite;
 #if MODS_ALLOWED
 import sys.FileSystem;
 import sys.io.File;
@@ -30,10 +31,13 @@ class CreditsState extends MusicBeatState
 	private var creditsStuff:Array<Array<String>> = [];
 
 	var bg:FlxSprite;
+	var pedropedropedro:FlxSprite;
 	var descText:FlxText;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 	var descBox:AttachedSprite;
+	
+	var checkerboard:FlxTiledSprite;
 
 	var offsetThing:Float = -75;
 
@@ -48,6 +52,13 @@ class CreditsState extends MusicBeatState
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		add(bg);
 		bg.screenCenter();
+		
+		checkerboard = new FlxTiledSprite(Paths.image('whiti'), FlxG.width * 3, FlxG.width * 3, true, true);
+		checkerboard.scrollFactor.set(0, 0);
+		checkerboard.x = -100;
+		checkerboard.y = -100;
+		checkerboard.antialiasing = false;
+		add(checkerboard);
 		
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
@@ -81,8 +92,18 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color 
-			['Android Port'],
-			['idklool', 'nothing', 'Hi I ported this again', 'https://youtube.com/@idklool01', 'FFFFFF'],
+			['BOB TAKEOVER'],
+			['GaboWuz', 'gab', 'this is gabo musk', 'https://youtube.com/@gabewuzx?si=H3eg4-G1xNuscAxO', 'D7A0FF'],
+			['DGL', 'dg', 'cenario poggers', 'https://youtube.com/@danielgamerdgl?si=TuwWFEvMUK5zYd6g', '74B9FF'],
+			['Fabz', 'fah', 'ideia original', 'https://youtube.com/@fabriciocoxinha9?si=d1K1PyiAS-QS-N3i', 'E6305D'],
+			[''],
+			['Creds Especiais'],
+			['idklool', 'idk', 'ele portou isso pa android', 'https://youtube.com/@idklool01', '562CDE'],
+			[''],
+			['Joga esse mod pls'],
+			['CommunityGame', 'games', 'canal de fnf', 'https://youtube.com/@communitygame?si=Q412gzqzQjqUJBQF', '5BE753'], //e gringo e?
+			['VSilva', 'silver', 'vsilva gamers', 'https://youtube.com/@vsilva?si=UaQeoniGIw9_0okg', '00D744'],
+			['Lightwuz', 'gaslight', 'lightwuz meu youtuber favorito', 'https://youtube.com/@lightwuz?si=KSOALiwwuSQ1GAM0', '621DE0'],
 			[''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
@@ -147,9 +168,16 @@ class CreditsState extends MusicBeatState
 		descBox.makeGraphic(1, 1, FlxColor.BLACK);
 		descBox.xAdd = -10;
 		descBox.yAdd = -10;
-		descBox.alphaMult = 0.6;
-		descBox.alpha = 0.6;
+		descBox.alphaMult = 0;
+		descBox.alpha = 0;
 		add(descBox);
+		
+		var pedropedropedro:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('menubobf/black'));
+		pedropedropedro.scrollFactor.set(0, 0);
+		pedropedropedro.updateHitbox();
+		pedropedropedro.screenCenter();
+		pedropedropedro.antialiasing = ClientPrefs.globalAntialiasing;
+		add(pedropedropedro);
 
 		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, "", 32);
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
@@ -177,6 +205,9 @@ class CreditsState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
+		
+		checkerboard.scrollX -= 1 * 15 * elapsed;
+		checkerboard.scrollY += 1 * 15 * elapsed;
 
 		if(!quitting)
 		{
