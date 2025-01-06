@@ -3305,6 +3305,7 @@ class PlayState extends MusicBeatState
 	{
 		if (Paths.formatToSongPath(SONG.song) == 'third-cheat')
 		// ainda nao tem conteudo pa essa
+		finishSong()
 		else
 		PlayState.storyPlaylist = ['third-cheat'];
 		PlayState.isStoryMode = true;
