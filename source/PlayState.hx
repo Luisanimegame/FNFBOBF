@@ -5243,6 +5243,10 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'dropped' && !usedPractice) {
 							unlock = true;
 						}
+					case 'bf_custom_nomiss':
+						if(Paths.formatToSongPath(SONG.song) == 'faker' && campaignMisses + songMisses < 1 && CoolUtil.difficultyString() == 'HARD' && !changedDifficulty && !usedPractice) {
+							unlock = true;
+						}
 				}
 
 				if(unlock) {
