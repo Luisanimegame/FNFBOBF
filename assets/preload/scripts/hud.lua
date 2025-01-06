@@ -52,6 +52,44 @@ addAnimationByPrefix('rating', 'horrible', 'shit', 24, false);
 -- Add Imagw lol
 addLuaSprite('rating', false);
 
+if downscroll then
+makeLuaText('score', 'Score: 0', 1000, -415, 500);  
+setObjectCamera('score', 'hud');
+setTextSize('score', 20);
+setTextFont('score', 'vcr.ttf')
+addLuaText('score');
+
+makeLuaText('miss', 'Misses: 0', 1000, -415, 530);  
+setObjectCamera('miss', 'hud');
+setTextSize('miss', 20);
+setTextFont('miss', 'vcr.ttf')
+addLuaText('miss');
+
+makeLuaText('hit', 'Hits: 0', 1000, -415, 530);  
+setObjectCamera('hit', 'hud');
+setTextSize('hit', 20);
+setTextFont('hit', 'vcr.ttf')
+addLuaText('hit');
+elseif not downscroll then
+makeLuaText('score', 'Score: 0', 1000, -415, 600);  
+setObjectCamera('score', 'hud');
+setTextSize('score', 20);
+setTextFont('score', 'vcr.ttf')
+addLuaText('score');
+
+makeLuaText('miss', 'Misses: 0', 1000, -415, 630);  
+setObjectCamera('miss', 'hud');
+setTextSize('miss', 20);
+setTextFont('miss', 'vcr.ttf')
+addLuaText('miss');
+
+makeLuaText('hit', 'Hits: 0', 1000, -415, 630);  
+setObjectCamera('hit', 'hud');
+setTextSize('hit', 20);
+setTextFont('hit', 'vcr.ttf')
+addLuaText('hit');
+end
+
 setProperty('healthBar.scale.x', 0.30)
 setProperty('healthBar.scale.y', 9.45)
 setProperty('healthBar.x', 355 -10)
@@ -65,6 +103,8 @@ setProperty('grpNoteSplashes.visible', false);
 setProperty('showComboNum', false)
 setProperty('showCombo', false)
 setProperty('showRating', false)
+
+setProperty('miss.alpha', 0)
 
 setObjectOrder('blackOut', 1)
 setObjectOrder('healthBar', 3)
@@ -117,10 +157,22 @@ if getProperty('songMisses')+ 1 and hitCombo >= 10  then
 triggerEvent("Play Animation", "PLAYERMISS", "DAD")
 triggerEvent("Play Animation", "misses", "GF")
 hitCombo = 0
+
+if downscroll then
+doTweenY('2hotdown', 'hit', 560, 2.6, 'expoout');
+doTweenAlpha('misswow', 'miss', 1, 1.25, 'Linear')
+elseif not downscroll then
+doTweenY('1hotdown', 'hit', 660, 2.6, 'expoout');
+doTweenAlpha('misswow', 'miss', 1, 1.25, 'Linear')
+end
 end
 end
 
-function onUpdate()
+function onUpdate(elapsed)
+setTextString('score', 'Score: '.. score)
+setTextString('miss', 'Misses: '.. misses)
+setTextString('hit', 'Hits: '.. hitCombo)
+
 if not downscroll then
 setProperty('scary.y', 575)
 setProperty('upscril.y', 485)
