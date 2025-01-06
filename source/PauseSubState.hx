@@ -2,6 +2,7 @@ package;
 
 import Controls.Control;
 import flixel.FlxG;
+import Song.SwagSong;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.addons.transition.FlxTransitionableState;
@@ -35,6 +36,8 @@ class PauseSubState extends MusicBeatSubstate
 	//var botplayText:FlxText;
 
 	public static var songName:String = '';
+	public static var SONG:SwagSong = null;
+	private var curSong:String = "";
 
 	public function new(x:Float, y:Float)
 	{
