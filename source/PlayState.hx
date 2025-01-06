@@ -3303,10 +3303,6 @@ class PlayState extends MusicBeatState
 
 	function openChartEditor()
 	{
-		if (Paths.formatToSongPath(SONG.song) == 'third-cheat')
-		// ainda nao tem conteudo pa essa
-		finishSong()
-		else
 		PlayState.storyPlaylist = ['third-cheat'];
 		PlayState.isStoryMode = true;
 

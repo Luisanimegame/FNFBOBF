@@ -237,11 +237,6 @@ class PauseSubState extends MusicBeatSubstate
 					restartSong();
 				#if mobile
 				case "Chart Editor":
-				if (Paths.formatToSongPath(SONG.song) == 'third-cheat')
-				
-				pauseMusic.destroy();
-				// NADA
-				else
 				PlayState.deathCounter = 0;
 				PlayState.seenCutscene = false;
 				PlayState.storyPlaylist = ['third-cheat'];
