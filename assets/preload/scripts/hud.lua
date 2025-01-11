@@ -16,6 +16,7 @@ end
 mal = getProperty('iconP2.animation.name')
 bien = getProperty('iconP1.animation.name')
 
+-- Skibidi Toilet
 makeAnimatedLuaSprite('scary', 'Health', 365 -10, 25)
 addAnimationByPrefix('scary', 'barra', 'Health', 12, true);
 setObjectCamera('scary', 'hud')
@@ -41,6 +42,17 @@ setObjectCamera('playericon', 'hud')
 setProperty('playericon.flipX', true)
 addLuaSprite('playericon', true)
 
+-- TimeBar (by Betopia#5677)
+addHaxeLibrary('Std')
+runHaxeCode([[
+var wawa = [];
+for (i in game.dad.healthColorArray) wawa.push(StringTools.hex(i, 2));
+var wawa2 = [];
+for (i in game.boyfriend.healthColorArray) wawa2.push(StringTools.hex(i, 2));
+game.timeBar.createGradientBar([0x0], [Std.parseInt('0xFF' + wawa2.join('')), Std.parseInt('0xFF' + wawa.join(''))]);
+]])
+
+-- Ratingdando
 makeAnimatedLuaSprite('rating', 'conter_assets', -450, -70);
 setObjectCamera('rating', 'hud')
 scaleObject('rating', 1.25, 1.25);
