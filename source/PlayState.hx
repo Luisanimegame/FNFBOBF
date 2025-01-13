@@ -3414,7 +3414,7 @@ class PlayState extends MusicBeatState
 							dadbattleSmokes.visible = false;
 						}});
 				}
-
+				
 			case 'Hey!':
 				var value:Int = 2;
 				switch(value1.toLowerCase().trim()) {
@@ -3423,6 +3423,27 @@ class PlayState extends MusicBeatState
 					case 'gf' | 'girlfriend' | '1':
 						value = 1;
 				}
+				
+			case 'Flash':
+			var val:Null<Int> = Std.parseInt(value1);
+			if(val == null) val = 0;
+
+			switch(Std.parseInt(value1))
+			{
+			if(val == boom)
+			FlxG.camera.flash(FlxColor.WHITE, 0.6);
+			}
+			}
+
+			case 'Zoom':
+			var val:Null<Int> = Std.parseInt(value1);
+			if(val == null) val = 0;
+
+			switch(Std.parseInt(value1))
+			{
+			FlxG.camera.flash(FlxColor.WHITE, 0.6);
+			}
+			}
 
 				var time:Float = Std.parseFloat(value2);
 				if(Math.isNaN(time) || time <= 0) time = 0.6;
