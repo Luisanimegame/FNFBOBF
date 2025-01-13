@@ -3434,6 +3434,7 @@ class PlayState extends MusicBeatState
 			FlxG.camera.flash(FlxColor.WHITE, 0.6);
 			}
 			}
+			}
 
 			case 'Zoom':
 			var val:Null<Int> = Std.parseInt(value1);
@@ -3442,6 +3443,7 @@ class PlayState extends MusicBeatState
 			switch(Std.parseInt(value1))
 			{
 			FlxG.camera.flash(FlxColor.WHITE, 0.6);
+			}
 			}
 			}
 
