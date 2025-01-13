@@ -3384,7 +3384,7 @@ class PlayState extends MusicBeatState
 			case 'flasj':
 				var val:Null<Int> = Std.parseInt(value1);
 			
-			if(val == boom)
+			if(val == 'boom')
 			{
 				FlxG.camera.flash(FlxColor.WHITE, 0.6);
 			}
