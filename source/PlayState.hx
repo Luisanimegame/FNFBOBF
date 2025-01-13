@@ -515,6 +515,42 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'bobtage':
+				var bllg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
+				bllg.antialiasing = true;
+				bllg.scrollFactor.set(0.9, 0.9);
+				add(bllg);
+		
+				var froont:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
+				froont.antialiasing = true;
+				front.scrollFactor.set(0.9, 0.9);
+				add(front);
+				
+				if(!ClientPrefs.lowQuality) {
+				var cuurty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
+				cuurty.antialiasing = true;
+				cuurty.scrollFactor.set(1, 1);
+				add(cuurty);
+				}
+				
+			case 'cheater':
+				var blg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
+				blg.antialiasing = true;
+				blg.scrollFactor.set(0.9, 0.9);
+				add(blg);
+		
+				var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
+				front.antialiasing = true;
+				front.scrollFactor.set(0.9, 0.9);
+				add(front);
+				
+				if(!ClientPrefs.lowQuality) {
+				var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
+				curty.antialiasing = true;
+				curty.scrollFactor.set(1, 1);
+				add(curty);
+				}
+		
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -838,38 +874,6 @@ class PlayState extends MusicBeatState
 				foregroundSprites.add(new BGSprite('tank5', 1620, 700, 1.5, 1.5, ['fg']));
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
 		}
-		
-		case 'bobtage': //huuuuuuh
-				var bllg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
-				bllg.antialiasing = true;
-				bllg.scrollFactor.set(0.9, 0.9);
-				add(bllg);
-		
-				var froont:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
-				froont.antialiasing = true;
-				front.scrollFactor.set(0.9, 0.9);
-				add(front);
-		
-				var cuurty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
-				cuurty.antialiasing = true;
-				cuurty.scrollFactor.set(1, 1);
-				add(cuurty);
-				
-		case 'cheater': //seja spooky meu querido
-				var blg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
-				blg.antialiasing = true;
-				blg.scrollFactor.set(0.9, 0.9);
-				add(blg);
-		
-				var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
-				front.antialiasing = true;
-				front.scrollFactor.set(0.9, 0.9);
-				add(front);
-		
-				var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
-				curty.antialiasing = true;
-				curty.scrollFactor.set(1, 1);
-				add(curty);
 
 		switch(Paths.formatToSongPath(SONG.song))
 		{
