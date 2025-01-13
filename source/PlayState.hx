@@ -838,6 +838,38 @@ class PlayState extends MusicBeatState
 				foregroundSprites.add(new BGSprite('tank5', 1620, 700, 1.5, 1.5, ['fg']));
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
 		}
+		
+		case 'bobtage': //huuuuuuh
+				var bg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(0.9, 0.9);
+				add(bg);
+		
+				var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
+				front.antialiasing = true;
+				front.scrollFactor.set(0.9, 0.9);
+				add(front);
+		
+				var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
+				curty.antialiasing = true;
+				curty.scrollFactor.set(1, 1);
+				add(curty);
+				
+		case 'cheater': //seja spooky meu querido
+				var bg:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('weekbob/stageback'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(0.9, 0.9);
+				add(bg);
+		
+				var front:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
+				front.antialiasing = true;
+				front.scrollFactor.set(0.9, 0.9);
+				add(front);
+		
+				var curty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
+				curty.antialiasing = true;
+				curty.scrollFactor.set(1, 1);
+				add(curty);
 
 		switch(Paths.formatToSongPath(SONG.song))
 		{
@@ -3386,8 +3418,7 @@ class PlayState extends MusicBeatState
 				FlxG.camera.flash(FlxColor.WHITE, 0.6);
 
 			case 'Zoom': //me sinto burra
-				var value:Int = Std.parseInt(value1);
-				if(value < 1) value = 1;
+				var value:Int = 1;
 				defaultCamZoom = value;
 			
 			case 'Dadbattle Spotlight':
@@ -4121,7 +4152,6 @@ class PlayState extends MusicBeatState
 		}
 
 		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating.image + pixelShitPart2));
-		rating.cameras = [camHUD];
 		rating.screenCenter();
 		rating.x = coolText.x - 40;
 		rating.y -= 60;
@@ -4133,7 +4163,6 @@ class PlayState extends MusicBeatState
 		rating.y -= ClientPrefs.comboOffset[1];
 
 		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
-		comboSpr.cameras = [camHUD];
 		comboSpr.screenCenter();
 		comboSpr.x = coolText.x;
 		comboSpr.acceleration.y = FlxG.random.int(200, 300) * playbackRate * playbackRate;
@@ -4145,6 +4174,7 @@ class PlayState extends MusicBeatState
 		comboSpr.velocity.x += FlxG.random.int(1, 10) * playbackRate;
 
 		insert(members.indexOf(strumLineNotes), rating);
+		insert(members.indexOf(strumLineNotes), comboSpr);
 		
 		if (!ClientPrefs.comboStacking)
 		{
@@ -4199,7 +4229,6 @@ class PlayState extends MusicBeatState
 		for (i in seperatedScore)
 		{
 			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
-			numScore.cameras = [camHUD];
 			numScore.screenCenter();
 			numScore.x = coolText.x + (43 * daLoop) - 90;
 			numScore.y += 80;
