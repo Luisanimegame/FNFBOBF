@@ -523,8 +523,8 @@ class PlayState extends MusicBeatState
 		
 				var froont:FlxSprite = new FlxSprite(-500, 600).loadGraphic(Paths.image('weekbob/stagefront'));
 				froont.antialiasing = true;
-				front.scrollFactor.set(0.9, 0.9);
-				add(front);
+				froont.scrollFactor.set(0.9, 0.9);
+				add(froont);
 				
 				if(!ClientPrefs.lowQuality) {
 				var cuurty:FlxSprite = new FlxSprite(-500, -245).loadGraphic(Paths.image('weekbob/stagecurtains'));
