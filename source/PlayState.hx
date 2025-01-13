@@ -3382,16 +3382,17 @@ class PlayState extends MusicBeatState
 	public function triggerEventNote(eventName:String, value1:String, value2:String) {
 		switch(eventName) {
 			case 'flasj':
-			var val:Null<Int> = Std.parseInt(value1);
+				var val:Null<Int> = Std.parseInt(value1);
+			
 			if(val == boom)
 			{
-			FlxG.camera.flash(FlxColor.WHITE, 0.6);
-			}
+				FlxG.camera.flash(FlxColor.WHITE, 0.6);
 			}
 
-			case 'Zoom':
-			var val:Null<Int> = Std.parseInt(value1);
-			defaultCamZoom = val;
+			case 'Zoom': //me sinto burra
+				var value:Int = Std.parseInt(value1);
+				if(value < 1) value = 1;
+				defaultCamZoom = value;
 			
 			case 'Dadbattle Spotlight':
 				var val:Null<Int> = Std.parseInt(value1);
