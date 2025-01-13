@@ -3430,8 +3430,9 @@ class PlayState extends MusicBeatState
 
 			switch(Std.parseInt(value1))
 			{
-			if(val == boom)
+			if(val == boom) {
 			FlxG.camera.flash(FlxColor.WHITE, 0.6);
+			}
 			}
 
 			case 'Zoom':
