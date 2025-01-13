@@ -3383,11 +3383,7 @@ class PlayState extends MusicBeatState
 		switch(eventName) {
 			case 'flasj':
 				var value:Int = Std.parseInt(value1);
-			
-			if(value == 'boom')
-			{
 				FlxG.camera.flash(FlxColor.WHITE, 0.6);
-			}
 
 			case 'Zoom': //me sinto burra
 				var value:Int = Std.parseInt(value1);
