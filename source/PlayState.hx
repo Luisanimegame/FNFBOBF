@@ -3381,7 +3381,7 @@ class PlayState extends MusicBeatState
 
 	public function triggerEventNote(eventName:String, value1:String, value2:String) {
 		switch(eventName) {
-			case 'Flash':
+			case 'flasj':
 			var val:Null<Int> = Std.parseInt(value1);
 			if(val == boom)
 			{
@@ -3392,7 +3392,6 @@ class PlayState extends MusicBeatState
 			case 'Zoom':
 			var val:Null<Int> = Std.parseInt(value1);
 			defaultCamZoom = val;
-			}
 			
 			case 'Dadbattle Spotlight':
 				var val:Null<Int> = Std.parseInt(value1);
