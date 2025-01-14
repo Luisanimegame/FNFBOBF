@@ -42,7 +42,7 @@ class FlashingState extends MusicBeatState
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Tome cuidado amigo!\n
 			Esse Jogo Original, feito por um cara completamente do bem\n
-			Tem Luzes Piscantes, wow! tu foi avisado (nao tem como desativar, eu acho)\n
+			Tem Luzes Piscantes, wow! (nao tem como desativar, eu acho)\n
 			aperte ESCAPE ou ENTER para ignorar a mensagem.\n
 			Tu foi bobsado!", //Xokito reference
 			32);

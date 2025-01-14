@@ -325,7 +325,7 @@ class MainMenuState extends MusicBeatState
 		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
 			
-		descText.text = optionShit[0];
+		descText.text = menuItems;
 		descText.y = FlxG.height - descText.height + offsetThing - 60;
 
 		menuItems.forEach(function(spr:FlxSprite)
