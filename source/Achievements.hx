@@ -11,7 +11,7 @@ using StringTools;
 
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 true],
+		["el nombre do jogo!",	"Jogue numa sexta hehe...",						'sexta',	 true],
 		["isso nao foi justo...",	"bob!bf takeover nao gosta de voce",						'winbob',	 false],
 		["eu te odeio praga.",		"Achou Segrados!",				'segredos',			false],
 		["easy mode k",	"easy? serio? que piada",						'winbobeasy',	 false],

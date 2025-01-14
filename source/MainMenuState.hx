@@ -181,8 +181,8 @@ class MainMenuState extends MusicBeatState
 		#if ACHIEVEMENTS_ALLOWED
 		Achievements.loadAchievements();
 		var leDate = Date.now();
-		if (leDate.getDay() == 5 && leDate.getHours() >= 18) {
-			var achieveID:Int = Achievements.getAchievementIndex('friday_night_play');
+		if (leDate.getDay() == 5) {
+			var achieveID:Int = Achievements.getAchievementIndex('sexta');
 			if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //It's a friday night. WEEEEEEEEEEEEEEEEEE
 				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
 				giveAchievement();
@@ -201,9 +201,9 @@ class MainMenuState extends MusicBeatState
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
 	function giveAchievement() {
-		add(new AchievementObject('friday_night_play', camAchievement));
+		add(new AchievementObject('sexta', camAchievement));
 		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
-		trace('Giving achievement "friday_night_play"');
+		trace('Giving achievement "sexta"');
 	}
 	#end
 
@@ -317,7 +317,7 @@ class MainMenuState extends MusicBeatState
 		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
 			
-		descText.text = optionShit[0];
+		descText.text = optionShit;
 		descText.y = FlxG.height - descText.height + offsetThing - 60;
 
 		menuItems.forEach(function(spr:FlxSprite)
