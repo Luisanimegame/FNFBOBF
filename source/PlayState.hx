@@ -3927,7 +3927,7 @@ class PlayState extends MusicBeatState
 		if(achievementObj != null) {
 			return;
 		} else {
-			var achieve:String = checkForAchievement(['bf_custom_nomiss']);
+			var achieve:String = checkForAchievement(['winbob', 'winbobeasy', 'cheater']);
 
 			if(achieve != null) {
 				startAchievement(achieve);
@@ -5274,12 +5274,20 @@ class PlayState extends MusicBeatState
 				}
 				switch(achievementName)
 				{
-					case 'wekscrety':
+					case 'segredos':
 						if(Paths.formatToSongPath(SONG.song) == 'dropped' && !usedPractice) {
 							unlock = true;
 						}
-					case 'bf_custom_nomiss':
+					case 'winbob':
 						if(Paths.formatToSongPath(SONG.song) == 'faker' && campaignMisses + songMisses < 1 && CoolUtil.difficultyString() == 'HARD' && !changedDifficulty && !usedPractice) {
+							unlock = true;
+						}
+					case 'winbobeasy':
+						if(Paths.formatToSongPath(SONG.song) == 'faker' && CoolUtil.difficultyString() == 'EASY' && !changedDifficulty && !usedPractice) {
+							unlock = true;
+						}
+					case 'cheater':
+						if(Paths.formatToSongPath(SONG.song) == 'third-cheat') {
 							unlock = true;
 						}
 				}
