@@ -480,6 +480,9 @@ class FreeplayState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 			
+		var leWeek:WeekData = loadedWeeks[curWeek];
+		WeekData.setDirectoryFromWeek(leWeek);
+			
 		var leName:String = leWeek.storyName;
 		descText.text = leName.toUpperCase();
 		descText.y = FlxG.height - descText.height + offsetThing - 60;
