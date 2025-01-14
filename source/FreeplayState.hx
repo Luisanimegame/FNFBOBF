@@ -201,33 +201,26 @@ class FreeplayState extends MusicBeatState
 		 */
 
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
-		textBG.alpha = 0.6;
+		textBG.alpha = 0;
 		add(textBG);
+		
+		descBox = new AttachedSprite();
+		descBox.makeGraphic(1, 1, FlxColor.BLACK);
+		descBox.xAdd = -10;
+		descBox.yAdd = -10;
+		descBox.alphaMult = 0;
+		descBox.alpha = 0;
+		add(descBox);
 
-		#if PRELOAD_ALL
-			#if mobile
-			var leText:String = "Press X to listen to the Song / Press C to open the Gameplay Changers Menu / Press Y to Reset your Score and Accuracy.";
-			var size:Int = 16;
-			#else
-			var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-			var size:Int = 16;
-			#end
-		#else
-			#if mobile
-			var leText:String = "Press C to open the Gameplay Changers Menu / Press Y to Reset your Score and Accuracy.";
-			var size:Int = 18;
-			#else
-			var leText:String = "Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-			var size:Int = 18;
-			#end
-		#end
-		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
-		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
-		text.scrollFactor.set();
-		add(text);
+		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, "", 32);
+		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+		descText.scrollFactor.set();
+		//descText.borderSize = 2.4;
+		descBox.sprTracker = descText;
+		add(descText);
 		
 		#if mobile
-		addVirtualPad(LEFT_FULL, A_B_C_X_Y);
+		addVirtualPad(LEFT_FULL, A_B_C);
 		#end
 		
 		super.create();
@@ -460,6 +453,11 @@ class FreeplayState extends MusicBeatState
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
 		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
 		#end
+		
+		#if PRELOAD_ALL
+		FlxG.sound.music.volume = 0;
+		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		#end
 
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
@@ -476,6 +474,10 @@ class FreeplayState extends MusicBeatState
 			curSelected = songs.length - 1;
 		if (curSelected >= songs.length)
 			curSelected = 0;
+			
+		var leName:String = leWeek.storyName;
+		descText.text = leName.toUpperCase();
+		descText.y = FlxG.height - descText.height + offsetThing - 60;
 			
 		var newColor:Int = songs[curSelected].color;
 		if(newColor != intendedColor) {
