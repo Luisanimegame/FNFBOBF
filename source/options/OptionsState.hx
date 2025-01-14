@@ -47,7 +47,7 @@ class OptionsState extends MusicBeatState
 			case 'isso nao e uma musica secreta':
 				#if ACHIEVEMENTS_ALLOWED
 				Achievements.loadAchievements();
-				var achieveID:Int = Achievements.getAchievementIndex('wekscrety');
+				var achieveID:Int = Achievements.getAchievementIndex('segredos');
 				if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //gaysex
 				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
 				giveAchievement();
@@ -93,9 +93,9 @@ class OptionsState extends MusicBeatState
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
 	function giveAchievement() {
-		add(new AchievementObject('wekscrety', camAchievement));
+		add(new AchievementObject('segredos', camAchievement));
 		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
-		trace('Giving achievement "wekscrety"');
+		trace('Giving achievement "segredos"');
 	}
 	#end
 
