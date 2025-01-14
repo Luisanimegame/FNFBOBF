@@ -58,6 +58,8 @@ class FreeplayState extends MusicBeatState
 	var descText:FlxText;
 	
 	var offsetThing:Float = -75;
+	
+	var loadedWeeks:Array<WeekData> = [];
 
 	override function create()
 	{
