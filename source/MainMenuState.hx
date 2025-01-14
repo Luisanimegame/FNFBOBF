@@ -12,6 +12,7 @@ import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
+
 import flixel.math.FlxMath;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -47,6 +48,9 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var descText:FlxText;
+	
+	var offsetThing:Float = -75;
 
 	override function create()
 	{
@@ -156,6 +160,13 @@ class MainMenuState extends MusicBeatState
 		}
 
 		FlxG.camera.follow(camFollowPos, null, 1);
+		
+		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, "", 32);
+		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+		descText.scrollFactor.set();
+		//descText.borderSize = 2.4;
+		descBox.sprTracker = descText;
+		add(descText);
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "FNF' BF TAKEOVER V1", 12);
 		versionShit.scrollFactor.set();
@@ -304,6 +315,9 @@ class MainMenuState extends MusicBeatState
 			curSelected = 0;
 		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
+			
+		descText.text = optionShit[0];
+		descText.y = FlxG.height - descText.height + offsetThing - 60;
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
