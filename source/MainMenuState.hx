@@ -48,6 +48,7 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var descBox:AttachedSprite;
 	var descText:FlxText;
 	
 	var offsetThing:Float = -75;

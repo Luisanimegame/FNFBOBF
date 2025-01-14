@@ -53,6 +53,11 @@ class FreeplayState extends MusicBeatState
 	var pedropedropedro:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
+	
+	var descBox:AttachedSprite;
+	var descText:FlxText;
+	
+	var offsetThing:Float = -75;
 
 	override function create()
 	{
