@@ -13,6 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.FlxSubState;
+import flixel.addons.display.FlxTiledSprite;
 import Achievements;
 
 using StringTools;
@@ -26,6 +27,10 @@ class AchievementsMenuState extends MusicBeatState
 	private var achievementArray:Array<AttachedAchievement> = [];
 	private var achievementIndex:Array<Int> = [];
 	private var descText:FlxText;
+	
+	var checkerboard:FlxTiledSprite;
+	var upp:FlxTiledSprite;
+	var downm:FlxTiledSprite;
 
 	override function create() {
 		#if desktop
