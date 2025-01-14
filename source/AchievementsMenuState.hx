@@ -38,6 +38,13 @@ class AchievementsMenuState extends MusicBeatState
 		menuBG.screenCenter();
 		menuBG.antialiasing = ClientPrefs.globalAntialiasing;
 		add(menuBG);
+		
+		checkerboard = new FlxTiledSprite(Paths.image('ciam'), FlxG.width * 3, FlxG.width * 3, true, true);
+		checkerboard.scrollFactor.set(0, 0);
+		checkerboard.x = -100;
+		checkerboard.y = -100;
+		checkerboard.antialiasing = false;
+		add(checkerboard);
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
@@ -63,6 +70,18 @@ class AchievementsMenuState extends MusicBeatState
 			achievementArray.push(icon);
 			add(icon);
 		}
+		
+		upp = new FlxTiledSprite(Paths.image('menubobf/up'), FlxG.width * 3, FlxG.width * 3, true, true);
+		upp.scrollFactor.set(0, 0);
+		upp.x = -100;
+		upp.antialiasing = false;
+		add(upp);
+		
+		downm = new FlxTiledSprite(Paths.image('menubobf/down'), FlxG.width * 3, FlxG.width * 3, true, true);
+		downm.scrollFactor.set(0, 0);
+		downm.x = -100;
+		downm.antialiasing = false;
+		add(downm);
 
 		descText = new FlxText(150, 600, 980, "", 32);
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -70,7 +89,7 @@ class AchievementsMenuState extends MusicBeatState
 		descText.borderSize = 2.4;
 		add(descText);
 		changeSelection();
-
+		
 		#if mobile
 		addVirtualPad(UP_DOWN, B);
 		addVirtualPadCamera();
@@ -80,6 +99,12 @@ class AchievementsMenuState extends MusicBeatState
 	}
 
 	override function update(elapsed:Float) {
+		
+		checkerboard.scrollX -= 1 * 35 * elapsed;
+		checkerboard.scrollY += 1 * 35 * elapsed;
+		upp.scrollX += 1 * 25 * elapsed;
+		downm.scrollX -= 1 * 25 * elapsed;
+	
 		super.update(elapsed);
 
 		if (controls.UI_UP_P) {
