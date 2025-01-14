@@ -3421,10 +3421,6 @@ class PlayState extends MusicBeatState
 				var value:Int = Std.parseInt(value1);
 				FlxG.camera.flash(FlxColor.WHITE, 0.6);
 
-			case 'Zoom': //me sinto burra
-				var value:Int = 1;
-				defaultCamZoom = value;
-			
 			case 'Dadbattle Spotlight':
 				var val:Null<Int> = Std.parseInt(value1);
 				if(val == null) val = 0;
