@@ -524,3 +524,15 @@ class PauseSubState extends MusicBeatSubstate
 		diffText.x -= diffText.width / 2;
 	}
 }
+
+class SongMetadata
+{
+	public var songName:String = "";
+	
+	public function new(song:String)
+	{
+		this.songName = song;
+		this.folder = Paths.currentModDirectory;
+		if(this.folder == null) this.folder = '';
+	}
+}
