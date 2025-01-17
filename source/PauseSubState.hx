@@ -382,11 +382,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
 		
-		#if PRELOAD_ALL
-		FlxG.sound.music.volume = 0;
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
-		#end
-
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
 		positionHighscore();
