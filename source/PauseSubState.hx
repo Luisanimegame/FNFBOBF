@@ -19,8 +19,6 @@ import flixel.addons.display.FlxTiledSprite;
 
 class PauseSubState extends MusicBeatSubstate
 {
-	var songs:Array<SongMetadata> = [];
-
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 	
 	var checkerboard:FlxTiledSprite;
