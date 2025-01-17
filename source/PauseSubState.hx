@@ -22,11 +22,17 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 	
 	var checkerboard:FlxTiledSprite;
+	
+	var curDifficulty:Int = -1;
 
 	var menuItems:Array<String> = [];
 	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', #if mobile 'Chart Editor', #end 'Change Difficulty', 'Exit to menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
+	
+	var scoreBG:FlxSprite;
+	var scoreText:FlxText;
+	var diffText:FlxText;
 
 	var pauseMusic:FlxSound;
 	var practiceText:FlxText;
@@ -38,6 +44,7 @@ class PauseSubState extends MusicBeatSubstate
 	public static var songName:String = '';
 	public static var SONG:SwagSong = null;
 	private var curSong:String = "";
+	private static var lastDifficultyName:String = '';
 
 	public function new(x:Float, y:Float)
 	{
@@ -120,8 +127,29 @@ class PauseSubState extends MusicBeatSubstate
 		chartingText.updateHitbox();
 		chartingText.visible = PlayState.chartingMode;
 		add(chartingText);
+		
+		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
+		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		add(scoreText);
+		
+		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
+		scoreBG.alpha = 0.6;
+		add(scoreBG);
+		
+		diffText = new FlxText(scoreText.x, scoreText.y);
+		diffText.font = scoreText.font;
+		add(diffText);
+		
+		if(lastDifficultyName == '')
+		{
+			lastDifficultyName = CoolUtil.defaultDifficulty;
+		}
+		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(lastDifficultyName)));
+		
+		changeDiff();
 
 		blueballedTxt.alpha = 0;
+		scoreText.alpha = 0;
 		levelInfo.alpha = 0;
 
 		levelInfo.x = FlxG.width - (levelInfo.width + 20);
@@ -169,6 +197,13 @@ class PauseSubState extends MusicBeatSubstate
 		{
 			changeSelection(1);
 		}
+		
+		curDifficulty = 2;
+		changeDiff();
+		if (controls.UI_LEFT_P)
+			changeDiff(0);
+		else if (controls.UI_RIGHT_P)
+			changeDiff(0);
 
 		var daSelected:String = menuItems[curSelected];
 		switch (daSelected)
@@ -330,6 +365,32 @@ class PauseSubState extends MusicBeatSubstate
 
 		super.destroy();
 	}
+	
+	function changeDiff(change:Int = 0)
+	{
+		curDifficulty += change;
+
+		if (curDifficulty < 0)
+			curDifficulty = CoolUtil.difficulties.length-1;
+		if (curDifficulty >= CoolUtil.difficulties.length)
+			curDifficulty = 0;
+
+		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+
+		#if !switch
+		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
+		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
+		#end
+		
+		#if PRELOAD_ALL
+		FlxG.sound.music.volume = 0;
+		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		#end
+
+		PlayState.storyDifficulty = curDifficulty;
+		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
+		positionHighscore();
+	}
 
 	function changeSelection(change:Int = 0):Void
 	{
@@ -363,6 +424,46 @@ class PauseSubState extends MusicBeatSubstate
 					updateSkipTimeText();
 				}
 			}
+		}
+		
+		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
+		var diffStr:String = WeekData.getCurrentWeek().difficulties;
+		if(diffStr != null) diffStr = diffStr.trim(); //Fuck you HTML5
+
+		if(diffStr != null && diffStr.length > 0)
+		{
+			var diffs:Array<String> = diffStr.split(',');
+			var i:Int = diffs.length - 1;
+			while (i > 0)
+			{
+				if(diffs[i] != null)
+				{
+					diffs[i] = diffs[i].trim();
+					if(diffs[i].length < 1) diffs.remove(diffs[i]);
+				}
+				--i;
+			}
+
+			if(diffs.length > 0 && diffs[0].length > 0)
+			{
+				CoolUtil.difficulties = diffs;
+			}
+		}
+		
+		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
+		{
+			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
+		}
+		else
+		{
+			curDifficulty = 0;
+		}
+
+		var newPos:Int = CoolUtil.difficulties.indexOf(lastDifficultyName);
+		//trace('Pos of ' + lastDifficultyName + ' is ' + newPos);
+		if(newPos > -1)
+		{
+			curDifficulty = newPos;
 		}
 	}
 
@@ -409,5 +510,10 @@ class PauseSubState extends MusicBeatSubstate
 	function updateSkipTimeText()
 	{
 		skipTimeText.text = FlxStringUtil.formatTime(Math.max(0, Math.floor(curTime / 1000)), false) + ' / ' + FlxStringUtil.formatTime(Math.max(0, Math.floor(FlxG.sound.music.length / 1000)), false);
+	}
+	
+	private function positionHighscore() {
+		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
+		diffText.x -= diffText.width / 2;
 	}
 }
