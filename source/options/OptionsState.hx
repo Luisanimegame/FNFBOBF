@@ -225,7 +225,6 @@ class OptionsState extends MusicBeatState
 		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
 
 		PlayState.storyDifficulty = curDifficulty;
-		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
 	}
 	
 	function changeSelection(change:Int = 0) {
