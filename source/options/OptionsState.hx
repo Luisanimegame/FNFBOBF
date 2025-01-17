@@ -31,17 +31,17 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var curDifficulty:Int = -1;
 	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
-	private static var lastDifficultyName:String = '';
 	private var camAchievement:FlxCamera;
 	public static var menuBG:FlxSprite;
-	var scoreBG:FlxSprite;
-	var scoreText:FlxText;
+	
+	var curDifficulty:Int = -1;
+	private static var lastDifficultyName:String = '';
+	
 	var diffText:FlxText;
-
+	
 	function openSelectedSubstate(label:String) {
 		switch(label) {
 			case 'Note Colors':
@@ -151,17 +151,8 @@ class OptionsState extends MusicBeatState
 		camAchievement.bgColor.alpha = 0;
 		FlxG.cameras.add(camAchievement, false);
 		
-		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
-		scoreBG.alpha = 0.6;
-		add(scoreBG);
-		
-		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
-		scoreText.alpha = 0;
-		add(scoreText);
-		
-		diffText = new FlxText(scoreText.x, scoreText.y);
-		diffText.font = scoreText.font;
+		diffText = new FlxText(0, 0);
+		diffText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
 		add(diffText);
 		
 		if(lastDifficultyName == '')
@@ -244,6 +235,8 @@ class OptionsState extends MusicBeatState
 			curSelected = 0;
 
 		var bullShit:Int = 0;
+		
+		FlxG.sound.play(Paths.sound('scrollMenu'));
 
 		for (item in grpOptions.members) {
 			item.targetY = bullShit - curSelected;
@@ -258,7 +251,6 @@ class OptionsState extends MusicBeatState
 				selectorRight.y = item.y;
 			}
 		}
-		FlxG.sound.play(Paths.sound('scrollMenu'));
 		
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 		var diffStr:String = WeekData.getCurrentWeek().difficulties;
@@ -299,10 +291,5 @@ class OptionsState extends MusicBeatState
 		{
 			curDifficulty = newPos;
 		}
-	}
-	
-	private function positionHighscore() {
-		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
-		diffText.x -= diffText.width / 2;
 	}
 }
