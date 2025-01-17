@@ -532,7 +532,5 @@ class SongMetadata
 	public function new(song:String)
 	{
 		this.songName = song;
-		this.folder = Paths.currentModDirectory;
-		if(this.folder == null) this.folder = '';
 	}
 }
