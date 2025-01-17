@@ -31,7 +31,7 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
+	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Language', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	private var camAchievement:FlxCamera;
@@ -77,6 +77,8 @@ class OptionsState extends MusicBeatState
 				removeVirtualPad();
 				#end
 				openSubState(new options.GraphicsSettingsSubState());
+			case 'Language':
+				openSubState(new options.LanguageSubState());
 			case 'Visuals and UI':
 				#if mobile
 				removeVirtualPad();
