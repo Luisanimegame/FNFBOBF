@@ -383,11 +383,6 @@ class PauseSubState extends MusicBeatSubstate
 			curDifficulty = 0;
 
 		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
-
-		#if !switch
-		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
-		#end
 		
 		#if PRELOAD_ALL
 		FlxG.sound.music.volume = 0;
@@ -522,15 +517,5 @@ class PauseSubState extends MusicBeatSubstate
 	private function positionHighscore() {
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.width / 2;
-	}
-}
-
-class SongMetadata
-{
-	public var songName:String = "";
-	
-	public function new(song:String)
-	{
-		this.songName = song;
 	}
 }
