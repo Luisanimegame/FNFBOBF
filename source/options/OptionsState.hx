@@ -41,11 +41,6 @@ class OptionsState extends MusicBeatState
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
 	var diffText:FlxText;
-	
-	var intendedScore:Int = 0;
-	var intendedRating:Float = 0;
-
-	private var grpSongs:FlxTypedGroup<Alphabet>;
 
 	function openSelectedSubstate(label:String) {
 		switch(label) {
@@ -162,9 +157,8 @@ class OptionsState extends MusicBeatState
 		
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
-		add(scoreText);
-		
 		scoreText.alpha = 0;
+		add(scoreText);
 		
 		diffText = new FlxText(scoreText.x, scoreText.y);
 		diffText.font = scoreText.font;
