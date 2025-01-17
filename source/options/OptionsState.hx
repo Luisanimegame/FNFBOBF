@@ -31,6 +31,8 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
+	var songs:Array<SongMetadata> = [];
+
 	var curDifficulty:Int = -1;
 	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
@@ -41,6 +43,11 @@ class OptionsState extends MusicBeatState
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
 	var diffText:FlxText;
+	
+	var intendedScore:Int = 0;
+	var intendedRating:Float = 0;
+
+	private var grpSongs:FlxTypedGroup<Alphabet>;
 
 	function openSelectedSubstate(label:String) {
 		switch(label) {
