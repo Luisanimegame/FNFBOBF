@@ -31,8 +31,6 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var songs:Array<SongMetadata> = [];
-
 	var curDifficulty:Int = -1;
 	var options:Array<String> = ['Controls', 'Adjust Delay and Combo', 'Graphics', 'isso nao e uma musica secreta', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
@@ -239,16 +237,6 @@ class OptionsState extends MusicBeatState
 
 		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
 
-		#if !switch
-		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
-		#end
-		
-		#if PRELOAD_ALL
-		FlxG.sound.music.volume = 0;
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
-		#end
-
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
 		positionHighscore();
@@ -322,15 +310,5 @@ class OptionsState extends MusicBeatState
 	private function positionHighscore() {
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.width / 2;
-	}
-}
-
-class SongMetadata
-{
-	public var songName:String = "";
-	
-	public function new(song:String)
-	{
-		this.songName = song;
 	}
 }
